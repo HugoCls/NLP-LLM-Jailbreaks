@@ -42,7 +42,7 @@ def query(context, model="gpt-3.5-turbo"):
 
     return output, completion_tokens, prompt_tokens, input_price, output_price
       
-def gpt(prompt):
+def response(prompt):
     model = "gpt-3.5-turbo-0125"
     context = [
         {"role": "system", "content": "You are a helpful assistant."},
@@ -55,6 +55,8 @@ def gpt(prompt):
 
     with open(f"data/GPT_results.txt", "a", encoding="utf-8") as f:
         f.write(f"{final_message}\n")
+    
+    return final_message
 
 
 
