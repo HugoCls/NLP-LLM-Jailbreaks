@@ -58,8 +58,8 @@ if __name__ == "__main__":
     final_message = f"{model}::{completion_tokens}::{prompt_tokens}::{input_price}::{output_price}::{message}".replace('\n', ' ')
 
     with open(f"data/GPT_results.txt", "a", encoding="utf-8") as f:
-
         f.write(f"{final_message}\n")
+
     print("############ GPT RESPONSE ##############")
     print("\n")
     print(message)
