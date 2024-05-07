@@ -1,8 +1,6 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
-import glob
-import pandas as pd
 import logging as log
 
 load_dotenv()
@@ -57,5 +55,7 @@ if __name__ == "__main__":
     
     final_message = f"{model}:{completion_tokens}:{prompt_tokens}:{input_price}:{output_price}:{message}"
     
+    final_message = f"{model}:{completion_tokens}:{prompt_tokens}:{input_price}:{output_price}:{message}".replace('\n', ' ')
+
     with open(f"data/GPT_results.txt", "a", encoding="utf-8") as f:
-        f.write(final_message)
+        f.write(f"{final_message}\n")
