@@ -22,15 +22,20 @@ pricing = {
         "input":3,
         "output":6,
     },
+    "gpt-4-0125-preview": {
+        "input":10,
+        "output":30,
+    },
 }
 
 
-def query(context, model="gpt-3.5-turbo"):
+def query(context, model="gpt-3.5-turbo", temperature=1):
     
     log.info(f"Query: {context} w/ Model: {model}")
     response = client.chat.completions.create(
         model=model,
         messages=context,
+        temperature=temperature,
     )
 
     completion_tokens = response.usage.completion_tokens
