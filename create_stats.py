@@ -1,6 +1,8 @@
 from evaluate_GPT import get_score
 from GPT import query, response
+import datetime
 
+# Load advbench dataset
 with open("data/advbench.txt", "r") as f:
     advbench_list = f.readlines()
 
@@ -37,7 +39,7 @@ if __name__ == "__main__":
 
                 message, completion_tokens, prompt_tokens, input_price, output_price = query(context=context, model=query_model, temperature=0.1)
 
-                final_message = f"{query_model}::{completion_tokens}::{prompt_tokens}::{input_price}::{output_price}::{message}".replace('\n', ' ')
+                final_message = f"{datetime.datetime.now()}::{query_model}::{completion_tokens}::{prompt_tokens}::{input_price}::{output_price}::{message}".replace('\n', ' ')
 
                 score = get_score(question=question, response=message)
 

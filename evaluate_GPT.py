@@ -5,7 +5,7 @@ from typing import Dict, List
 from dotenv import load_dotenv
 import re
 from fastchat.model import get_conversation_template
-from system_prompts import get_evaluator_system_prompt_for_judge, get_evaluator_system_prompt_for_on_topic
+from modules.system_prompts import get_evaluator_system_prompt_for_judge, get_evaluator_system_prompt_for_on_topic
 import argparse
 
 load_dotenv()
