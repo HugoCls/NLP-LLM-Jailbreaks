@@ -1,6 +1,6 @@
 from evaluate_GPT import get_score
 from GPT import query, response
-
+import datetime
 # Load advbench dataset
 with open("data/advbench.txt", "r") as f:
     advbench_list = f.readlines()
@@ -36,9 +36,9 @@ if __name__ == "__main__":
                 score = get_score(question=question, response=message)
 
                 jailbreak_result = f"{query_model}::{score}::{jailbreak}::{question}::{message}".replace('\n', ' ')
-
+                maintenant = datetime.datetime.now()
                 with open(f"data/GPT_results.txt", "a", encoding="utf-8") as f:
-                    f.write(f"{final_message}\n")
+                    f.write(f"{maintenant}::{final_message}\n")
 
                 with open(f"data/PromptsJailbreaks_Results.txt", "a", encoding="utf-8") as f:
                     f.write(f"{jailbreak_result}\n")

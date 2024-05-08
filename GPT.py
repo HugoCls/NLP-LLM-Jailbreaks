@@ -2,7 +2,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import os
 import logging as log
-
+import datetime
 load_dotenv()
 
 OPENAI_API_KEY = os.getenv('openai_api_key')
@@ -57,9 +57,9 @@ def response(prompt):
     message, completion_tokens, prompt_tokens, input_price, output_price = query(context=context, model=model)
     
     final_message = f"{model}::{completion_tokens}::{prompt_tokens}::{input_price}::{output_price}::{message}".replace('\n', ' ')
-
+    maintenant = datetime.datetime.now()
     with open(f"data/GPT_results.txt", "a", encoding="utf-8") as f:
-        f.write(f"{final_message}\n")
+        f.write(f"{maintenant}::{final_message}\n")
     
     return final_message
 
