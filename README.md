@@ -3,4 +3,4 @@
 # A Faire / Objectifs
 
 - Implémenter TAP et le faire fonctionner avec gpt comme LLMs ( voir si on peut en utiliser d'autres)
-- Faire focntionner les techniques / automatiquement convertir des prompts simple pour jailbreak
+- Faire fonctionner les techniques / automatiquement convertir des prompts simple pour jailbreak
