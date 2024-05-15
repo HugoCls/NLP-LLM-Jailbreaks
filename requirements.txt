@@ -1,3 +1,8 @@
 pandas
 numpy
 tqdm
+openai
+google-generativeai
+tenacity
+transformers
+art
