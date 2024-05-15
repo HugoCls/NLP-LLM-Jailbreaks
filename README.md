@@ -95,8 +95,10 @@ Over 126,000 prompt injection attacks and 46,000 prompt-based "defenses" against
 
 | Technique | Launched | Working |
 |:-------:|:------:|:------:|
-| PAIR | 100 | :x: | :?: |
+| PAIR | :white_check_mark: | :white_check_mark: | 1% |
 | Trees of Attacks | :white_check_mark: | 10% |
-| AutoDan & Others | :white_check_mark: | 10-100% |
+| AutoDan & Others | :white_check_mark: | 10 to 100% |
 | ArtPrompt | :white_check_mark: | :x: |
 | Disguise & Reconstitution | :white_check_mark: | :x: |
+| TRA Evaluator | :white_check_mark: | :white_check_mark: |
+| openreview Evaluator | :white_check_mark: | :x: |
