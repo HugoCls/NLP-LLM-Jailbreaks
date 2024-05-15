@@ -136,6 +136,8 @@ We implemented different types of AutoPrompt, sorting them by themes:
 - Specific: targeting one type of harmful content
 - Generalist: complete jailbreak (you can ask any prompt)
 
+Here is an overview of the efficiency of the following Prompts. 
+
 The values are from 1 to 10 & 10 is the best value.
 
 | Name | Type | Powerness of Jailbreak | Resilience over Models |
@@ -150,6 +152,8 @@ The values are from 1 to 10 & 10 is the best value.
 | Vulgarian | Specific | 10 | ? |
 | BlackHatCoder | CodeGeneration | 10 | ? |
 | GoogleDorks | CodeGeneration | ? | ? |
+
+More precisely, here is a review of all of them tryed on different AIs.
 
 | Name | ClassicVSJailbreak | Dan6.0 | Dude | MongoTom | Stan | Hackerman | SexEnjoyer | Vulgarian | BlackHatCoder | GoogleDorks |
 |:-------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
