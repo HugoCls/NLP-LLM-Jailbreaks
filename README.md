@@ -155,7 +155,8 @@ The values are from 1 to 10 & 10 is the best value.
 |:-------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
 | ChatGPT-4o | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
 | ChatGPT-4 Turbo | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| ChatGPT-3.5 Turbo | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| ChatGPT-3.5 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| ChatGPT-3.5 Turbo (API) | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: |
 | Llama3 | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
 | Llama2 | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
 | Gemini-Pro | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
