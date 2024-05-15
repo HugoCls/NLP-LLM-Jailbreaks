@@ -129,5 +129,35 @@ And there is our first problem, at some point we had for example this following 
 
 but the evaluator categorized it as off topic, even though it is clearly on topic.
 
+# AutoPrompts
 
+We implemented different types of AutoPrompt, sorting them by themes:
+- CodeGeneration: anything in non spoken language (Code, Google Dorks.. )
+- Specific: targeting one type of harmful content
+- Generalist: complete jailbreak (you can ask any prompt)
+
+The values are from 1 to 10 & 10 is the best value.
+
+| Name | Type | Powerness of Jailbreak | Resilience over Models |
+|:-------:|:------:|:------:|:------:|
+| ClassicVSJailbreak | Generalist | 7 | ? |
+| Dan6.0 | Generalist | 7 | ? |
+| Dude | Generalist | 8 | ? |
+| MongoTom | Generalist | 6 | ? |
+| Stan | Generalist | 6 | ? |
+| Hackerman | Specific | 10 | ? |
+| SexEnjoyer | Specific | 10 | ? |
+| Vulgarian | Specific | 10 | ? |
+| BlackHatCoder | CodeGeneration | 10 | ? |
+| GoogleDorks | CodeGeneration | ? | ? |
+
+| Name | ClassicVSJailbreak | Dan6.0 | Dude | MongoTom | Stan | Hackerman | SexEnjoyer | Vulgarian | BlackHatCoder | GoogleDorks |
+|:-------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+| ChatGPT-4o | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| ChatGPT-4 Turbo | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| ChatGPT-3.5 Turbo | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Llama3 | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Llama2 | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Gemini-Pro | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Palm-2 | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
 
