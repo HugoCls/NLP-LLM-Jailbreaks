@@ -99,7 +99,7 @@ For the Trees of Attacks method, we used this version as an attacker, the target
 | Technique | Launched | Working | Adapted/Implemented to Project |
 |:-------:|:------:|:------:|:------:|
 | PAIR | :white_check_mark: | 1% | :x: |
-| Trees of Attacks | :white_check_mark: | 10% | to improve |
+| Trees of Attacks | :white_check_mark: | 10-95% by topic | to improve |
 | AutoDan & Others | :white_check_mark: | 10 to 100% | :white_check_mark: |
 | ArtPrompt | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: |
 | Disguise & Reconstitution | :white_check_mark: | :x: | :x: |
