@@ -96,16 +96,16 @@ Over 126,000 prompt injection attacks and 46,000 prompt-based "defenses" against
 When we tried implementing those, we use chatgpt 3.5 turbo version.
 For the Trees of Attacks method, we used this version as an attacker, the target and as the evaluator.
 
-| Technique | Launched | Working |
-|:-------:|:------:|:------:|
-| PAIR | :white_check_mark: | 1% |
-| Trees of Attacks | :white_check_mark: | 10% |
-| AutoDan & Others | :white_check_mark: | 10 to 100% |
-| ArtPrompt | :white_check_mark: | :x: |
-| Disguise & Reconstitution | :white_check_mark: | :x: |
-| TRA Evaluator | :white_check_mark: | :white_check_mark: |
-| openreview Evaluator | :white_check_mark: | :x: |
-
+| Technique | Launched | Working | Adapted/Implemented to Project |
+|:-------:|:------:|:------:|:------:|
+| PAIR | :white_check_mark: | 1% | :x: |
+| Trees of Attacks | :white_check_mark: | 10% | to improve |
+| AutoDan & Others | :white_check_mark: | 10 to 100% | :white_check_mark: |
+| ArtPrompt | :white_check_mark: | :x: | :white_check_mark: | :white_check_mark: |
+| Disguise & Reconstitution | :white_check_mark: | :x: | :x: |
+| TRA Evaluator | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| openreview Evaluator | :white_check_mark: | :x: | :white_check_mark: |
+| TRA Ontopic Score | :white_check_mark: | :x: | :white_check_mark: |
 
 ## Our implementation
 
