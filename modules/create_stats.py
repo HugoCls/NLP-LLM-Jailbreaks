@@ -24,7 +24,7 @@ if __name__ == "__main__":
     for j in range(1):
         for jailbreak in ["ClassicVSJailbreak", "Dan6.0", "Dude", "MongoTom", "Stan"]:
 
-            with open(f"Prompts/English/Generalist/{jailbreak}.md", "r", encoding="utf-8") as f:
+            with open(f"AutoJailbreaksEnglish/Generalist/{jailbreak}.md", "r", encoding="utf-8") as f:
                 jailbreak_prompt = f.read()
 
             for question in advbench_list[:1]:
