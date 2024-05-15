@@ -96,7 +96,7 @@ Over 126,000 prompt injection attacks and 46,000 prompt-based "defenses" against
 When we tried implementing those, we use chatgpt 3.5 turbo version.
 For the Trees of Attacks method, we used this version as an attacker, the target and as the evaluator.
 
-| Technique | Launched | Working | Adapted/Implemented to Project |
+| Technique | Launched | Working | Adapt/Implem. to Project |
 |:-------:|:------:|:------:|:------:|
 | PAIR | :white_check_mark: | 1% | :x: |
 | Trees of Attacks | :white_check_mark: | 10-95% by topic | to improve |
