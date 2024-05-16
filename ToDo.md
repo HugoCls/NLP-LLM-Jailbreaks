@@ -16,7 +16,11 @@
 
 - Faire deux cafés **JAMES**
 
-- Implémenter TAP avec d'autres IA
+- Implémenter TAP avec d'autres IA (Compliqué)
+
+- Modifier le text prompt pour évaluer pour peut-etre avoir quelque chose de plus précis / qui donne des meilleurs notes
+
+- Combiner TAP avec d'autres méthodes pour fabriquer les prompts de jailbreak
 
 # DONE
 - Utiliser le GPT evaluator
@@ -28,3 +32,4 @@
 - Evaluator GPT marche que en GPT4 mais cher
 - TAP coutre tres cher en query
 - Les jailbreaks API marchent tres rarement (pas avec 3.5 turbo)
+
