@@ -3,24 +3,30 @@
 # A Faire / Objectifs
 
 # TODO
-- Implémenter TAP et le faire fonctionner avec gpt comme LLMs ( voir si on peut en utiliser d'autres) **HUGO/REMI**
-    --> Mettre à jour les fonctions qui appellent l'api chatgpt, et ajouter des modeles **HUGO**
+P1:
+- Appel API: Llama 2/3, Gemini, Palm, Vicuna, Mistral..
+  
+- Evaluator
+  - Améliorer les Prompts Evaluator
+  - Tester les Prompts sur d'autres IA
 
-- Implémenter l'appel API de Llama 2/3 **REMI**
-    --> L'implémenter pour le evaluator
-    --> Query les jailbreaks avec d'autres IA
+- Combiner TAP & Prompts de jailbreak
 
-- Implémenter l'appel à des IA Locales
+ - Lancer TAP sur dataset advbench
+    
+P2:
+- IA Locales (Llama?.. )
+- Regarder les méthodes de DRA implémentées en ligne
 
-- Implémenter query avec navigateur **HUGO**
 
-- Faire deux cafés **JAMES**
+P5:
+- Implémenter TAP et le faire fonctionner avec gpt comme LLMs ( voir si on peut en utiliser d'autres)
+    --> Mettre à jour les fonctions qui appellent l'api chatgpt, et ajouter des modeles
 
-- Implémenter TAP avec d'autres IA (Compliqué)
+- Implémenter query avec navigateur
 
-- Modifier le text prompt pour évaluer pour peut-etre avoir quelque chose de plus précis / qui donne des meilleurs notes
 
-- Combiner TAP avec d'autres méthodes pour fabriquer les prompts de jailbreak
+
 
 # DONE
 - Utiliser le GPT evaluator
