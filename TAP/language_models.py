@@ -11,7 +11,8 @@ from copy import deepcopy
 from dotenv import load_dotenv
 from config import LLAMA_API_LINK, VICUNA_API_LINK
 
-    
+load_dotenv()
+
 class LanguageModel():
     def __init__(self, model_name):
         self.model_name = model_name
@@ -203,8 +204,9 @@ class GPT(LanguageModel):
     API_MAX_RETRY = 20
     API_TIMEOUT = 20
     
-    load_dotenv()
-    openai.api_key = os.getenv("OPENAI_API_KEY")
+    def __init__(self, model_name: str):
+        super().__init__(model_name)
+        self.client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
     def generate(self, conv: List[Dict], 
                 max_n_tokens: int, 
@@ -221,17 +223,16 @@ class GPT(LanguageModel):
         '''
         output = self.API_ERROR_OUTPUT
         for _ in range(self.API_MAX_RETRY):
-            try: 
-                
-                response = openai.ChatCompletion.create(
-                            model = self.model_name,
-                            messages = conv,
-                            max_tokens = max_n_tokens,
-                            temperature = temperature,
-                            top_p = top_p,
-                            request_timeout = self.API_TIMEOUT,
-                            )
-                output = response["choices"][0]["message"]["content"]
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.model_name,
+                    messages=conv,
+                    max_tokens=max_n_tokens,
+                    temperature=temperature,
+                    top_p=top_p,
+                    timeout=self.API_TIMEOUT,
+                )
+                output = response.choices[0].message.content.strip()
                 break
             except Exception as e: 
                 print(type(e), e)

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\hugoc\Desktop\COURS\UPB\NLP\NLP-LLM-Jailbreaks\main.py", line 168, in <module>
+    main(args)
+  File "C:\Users\hugoc\Desktop\COURS\UPB\NLP\NLP-LLM-Jailbreaks\main.py", line 77, in main
+    wandb_logger.log(args, response, score)
+  File "C:\Users\hugoc\Desktop\COURS\UPB\NLP\NLP-LLM-Jailbreaks\wandb_logger.py", line 24, in log
+    logg.log(f"{arg_name}: {arg_value[0]}")
+TypeError: log() missing 1 required positional argument: 'msg'

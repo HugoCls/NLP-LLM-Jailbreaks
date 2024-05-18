@@ -48,8 +48,7 @@ def query(context, model="gpt-3.5-turbo", temperature=1):
 
     return output, completion_tokens, prompt_tokens, input_price, output_price
       
-def response(prompt):
-    model = "gpt-3.5-turbo-0125"
+def response(prompt, model="gpt-3.5-turbo-0125"):
     context = [
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": prompt}

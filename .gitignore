@@ -1,2 +1,6 @@
 .env
+LanguageModels/.env
 __pycache__/*
+TAP/__pycache__/*
+AutoJailbreaks/__pycache__/*
+ArtPrompt/__pycache__/*
