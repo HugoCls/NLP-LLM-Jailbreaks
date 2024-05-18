@@ -54,7 +54,7 @@ def response(prompt, model="gpt-3.5-turbo-0125"):
         {"role": "user", "content": prompt}
     ]
 
-    message, completion_tokens, prompt_tokens, input_price, output_price = query(context=context, model=model, temperature = temp)
+    message, completion_tokens, prompt_tokens, input_price, output_price = query(context=context, model=model)
     
     final_message = f"{datetime.datetime.now()}::{model}::{completion_tokens}::{prompt_tokens}::{input_price}::{output_price}::{message}".replace('\n', ' ')
 
