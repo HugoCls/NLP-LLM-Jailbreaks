@@ -1,9 +1,8 @@
-#pip install -q -U google-generativeai (requirement)
-
 import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 import datetime
+from google.generativeai.types import HarmCategory, HarmBlockThreshold
 
 load_dotenv()
 
@@ -15,7 +14,11 @@ def response(prompt, model_name="gemini-1.5-flash"):
 
     model = genai.GenerativeModel(model_name)
 
-    message = model.generate_content(prompt).text
+    message = model.generate_content(prompt, safety_settings={
+        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+        HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+        HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+        HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE}).text
 
     final_message = f"{datetime.datetime.now()}::{model_name}::{message}".replace('\n', ' ')
 

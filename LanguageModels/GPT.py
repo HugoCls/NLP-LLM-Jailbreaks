@@ -30,19 +30,19 @@ pricing = {
 }
 
 
-def query(context, model="gpt-3.5-turbo", temperature=1):
+def query(context, model_name="gpt-3.5-turbo", temperature=1):
     
-    log.info(f"Query: {context} w/ Model: {model}")
+    log.info(f"Query: {context} w/ Model: {model_name}")
     response = client.chat.completions.create(
-        model=model,
+        model=model_name,
         messages=context,
         temperature=temperature,
     )
 
     completion_tokens = response.usage.completion_tokens
     prompt_tokens = response.usage.prompt_tokens
-    input_price = pricing[model]["input"] * prompt_tokens / 1000000
-    output_price = pricing[model]["output"] * completion_tokens / 1000000
+    input_price = pricing[model_name]["input"] * prompt_tokens / 1000000
+    output_price = pricing[model_name]["output"] * completion_tokens / 1000000
 
     output = response.choices[0].message.content
 
@@ -54,7 +54,7 @@ def response(prompt, model="gpt-3.5-turbo-0125"):
         {"role": "user", "content": prompt}
     ]
 
-    message, completion_tokens, prompt_tokens, input_price, output_price = query(context=context, model=model)
+    message, completion_tokens, prompt_tokens, input_price, output_price = query(context=context, model_name=model)
     
     final_message = f"{datetime.datetime.now()}::{model}::{completion_tokens}::{prompt_tokens}::{input_price}::{output_price}::{message}".replace('\n', ' ')
 
