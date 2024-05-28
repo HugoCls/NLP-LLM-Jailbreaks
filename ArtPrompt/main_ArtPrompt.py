@@ -33,6 +33,6 @@ def main(args):
     with open("prompt.md", "w", encoding="utf-8") as f:
         f.write(attack_prompt)
 
-    response = AI.response(prompt=attack_prompt, model=args.model_name).split("::")[-1]
+    response = AI.response(prompt=attack_prompt, model_name=args.model_name).split("::")[-1]
 
     return attack_prompt, response

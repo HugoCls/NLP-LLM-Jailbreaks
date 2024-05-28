@@ -38,7 +38,7 @@ def main(args):
 
         attack_prompt = attack_prompt.replace('""', f'"{args.prompt}"')
 
-        response = AI.response(prompt=attack_prompt, model=args.model_name).split("::")[-1]
+        response = AI.response(prompt=attack_prompt, model_name=args.model_name).split("::")[-1]
 
         return attack_prompt, response
     

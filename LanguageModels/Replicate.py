@@ -13,14 +13,14 @@ REPLICATE_API_KEY = os.getenv('replicate_api_key')
 client = Client(api_token=REPLICATE_API_KEY)
 
 
-def response(prompt, model="mistral-large-latest"):
+def response(prompt, model_name="mistral-large-latest"):
 
     message = client.run(
         "meta/meta-llama-guard-2-8b:b063023ee937f28e922982abdbf97b041ffe34ad3b35a53d33e1d74bb19b36c4",
         input=prompt
     )
 
-    final_message = f"{datetime.datetime.now()}::{model}::{message}".replace('\n', ' ')
+    final_message = f"{datetime.datetime.now()}::{model_name}::{message}".replace('\n', ' ')
 
     with open(f"results/Replicate.txt", "a", encoding="utf-8") as f:
         f.write(f"{final_message}\n")

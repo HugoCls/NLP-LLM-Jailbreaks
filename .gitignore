@@ -4,8 +4,8 @@ __pycache__/*
 TAP/__pycache__/*
 AutoJailbreaks/__pycache__/*
 AutoJailbreaks/stats.py
-AutoJailbreaks/results.txt
 AutoJailbreaks/advbench.txt
+AutoJailbreaks/results.txt
 ArtPrompt/__pycache__/*
 modules/__pycache__/*
 LanguageModels/__pycache__/*
