@@ -25,6 +25,10 @@ P5:
 
 - Implémenter query avec navigateur
 
+P6:
+- Utiliser les IA replicate et voir si elles peuvent fonctionner
+- Permettre de ne pas utiliser wandb (ajt argument)
+- Ajouter dans le readme comment se log à wan db
 
 
 
