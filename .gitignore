@@ -9,3 +9,6 @@ LanguageModels/__pycache__/*
 Evaluations/__pycache__/*
 test.py
 wandb/*
+TAP/wandb/*
+TAP/result_folder/*
+results/*

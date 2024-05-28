@@ -1,4 +1,3 @@
-from LanguageModels import GPT
 import os
 
 prompt_files = []
@@ -14,7 +13,19 @@ for root, dirs, files in os.walk("AutoJailbreaks"):
             prompt_files.append(file_path)
 
 def main(args):
-    
+
+    if "gpt" in args.model_name.lower():
+        from LanguageModels import GPT as AI
+
+    elif "mistral" in args.model_name.lower():
+        from LanguageModels import Mistral as AI
+
+    elif "gemini" in args.model_name.lower():
+        from LanguageModels import Gemini as AI
+        
+    else:
+        from LanguageModels import Replicate as AI
+
     jailbreak_file = None
 
     for prompt_file in prompt_files:
@@ -27,7 +38,7 @@ def main(args):
 
         attack_prompt = attack_prompt.replace('""', f'"{args.prompt}"')
 
-        response = GPT.response(prompt=attack_prompt, model=args.model_name).split("::")[-1]
+        response = AI.response(prompt=attack_prompt, model=args.model_name).split("::")[-1]
 
         return attack_prompt, response
     
