@@ -58,7 +58,7 @@ def response(prompt, model="gpt-3.5-turbo-0125"):
     
     final_message = f"{datetime.datetime.now()}::{model}::{completion_tokens}::{prompt_tokens}::{input_price}::{output_price}::{message}".replace('\n', ' ')
 
-    with open(f"data/GPT_results.txt", "a", encoding="utf-8") as f:
+    with open(f"results/GPT.txt", "a", encoding="utf-8") as f:
         f.write(f"{final_message}\n")
     
     return final_message

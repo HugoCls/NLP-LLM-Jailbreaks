@@ -6,3 +6,5 @@ google-generativeai
 tenacity
 transformers
 art
+mistralai
+replicate
