@@ -8,3 +8,15 @@ transformers
 art
 mistralai
 replicate
+google-generativeai
+anthropic==0.10.0
+fschat==0.2.32
+protobuf==4.25.0
+pytz==2023.3.post1
+torch==2.1.0
+transformers==4.35.0
+urllib3==2.1.0
+wandb==0.16.1
+accelerate==0.25.0
+pyarrow
+fastparquet
