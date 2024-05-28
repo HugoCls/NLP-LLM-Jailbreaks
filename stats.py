@@ -20,7 +20,7 @@ def main(prompt_ascii,prompt_tap,prompt_autojailbreak):
     
     return df
 
-def tap(df,prompt_tap)
+def tap(df,prompt_tap):
     break
 
 def autojailbreak(df, prompt_autojailbreak):
