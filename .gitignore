@@ -8,3 +8,4 @@ modules/__pycache__/*
 LanguageModels/__pycache__/*
 Evaluations/__pycache__/*
 test.py
+wandb/*
