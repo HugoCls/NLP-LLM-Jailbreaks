@@ -144,7 +144,15 @@ if __name__ == "__main__":
                  "matching_words", 
                  ]
     )
-
+    
+    parser.add_argument(
+    "--no_wandb",
+    action="store_false",
+    dest="wandb_logger",
+    help="Disable wandb logging"
+    )
+    
+    parser.set_defaults(wandb_logger=True)
     ########### AI Model parameters ##########
 
     parser.add_argument(

@@ -15,3 +15,4 @@ wandb/*
 TAP/wandb/*
 TAP/result_folder/*
 results/*
+data/console.log
