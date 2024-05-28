@@ -3,11 +3,14 @@ LanguageModels/.env
 __pycache__/*
 TAP/__pycache__/*
 AutoJailbreaks/__pycache__/*
+AutoJailbreaks/stats.py
 ArtPrompt/__pycache__/*
 modules/__pycache__/*
 LanguageModels/__pycache__/*
 Evaluations/__pycache__/*
 test.py
 wandb/*
-results/GPT.txt
+TAP/wandb/*
+TAP/result_folder/*
+results/*
 data/console.log
