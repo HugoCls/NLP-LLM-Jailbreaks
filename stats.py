@@ -1,6 +1,18 @@
 from ArtPrompt.main_ArtPrompt import main
 
 def main(prompt_ascii,prompt_tap,prompt_autojailbreak):
+    
+    data = {
+            'prompt': [],
+            'response': [],
+            'evaluator_response': [],
+            'attack_mode': [],
+            'chosen_prompt': [],
+            'ascii_word': [],
+            'model_name': [],
+            'evaluator': [],  
+        }
+    
     df = pd.DataFrame(data)
     df = ascii(df,prompt_ascii)
     df = tap(df,prompt_tap)
@@ -15,17 +27,6 @@ def autojailbreak(df, prompt_autojailbreak):
     break
 
 def ascii(df, prompts : list):
-    data = {
-            'prompt': [],
-            'response': [],
-            'evaluator_response': [],
-            'attack_mode': [],
-            'chosen_prompt': [],
-            'ascii_word': [],
-            'model_name': [],
-            'evaluator': [],  
-        }
-
     for prompt,word in prompts:
         response = Artprompt.main(prompt)[1]
         score = GTP_evaluator.get_score(question=prompt, response=response)
