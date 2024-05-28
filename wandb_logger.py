@@ -24,7 +24,7 @@ def log_(args, attack_prompt, response, score):
         logg.log(level=logg.INFO, msg=f"{arg_name}: {arg_value[0]}")
     
     if args.wandb_logger == True:
-        wandb.init(project='NLP', entity=args.wandb_login)
+        wandb.init(project='NLP')
         
         df = pd.DataFrame(data)
 

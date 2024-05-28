@@ -152,11 +152,6 @@ if __name__ == "__main__":
     help="Disable wandb logging"
     )
     
-    parser.add_argument(
-    "--wandb_login",
-    help="The login that is used by wandb"
-    )
-    
     parser.set_defaults(wandb_logger=True)
     ########### AI Model parameters ##########
 
