@@ -118,8 +118,8 @@ if __name__ == "__main__":
         "--chosen_prompt",
         help = "Choice of the auto-prompt if AutoJailbreaks was chosen.",
         choices=[
-            "BlackHatCoder",
-            "GoogleDorks",
+            "BlackHatCoder", 
+            "GoogleDorks", 
             "ClassicVSJailbreak", 
             "Dan6.0", 
             "Dude",  
@@ -146,7 +146,7 @@ if __name__ == "__main__":
     )
     
     parser.add_argument(
-    "--no_wandb",
+    "--no_wandb_logger",
     action="store_false",
     dest="wandb_logger",
     help="Disable wandb logging"
