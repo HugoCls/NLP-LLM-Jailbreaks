@@ -151,21 +151,13 @@ if __name__ == "__main__":
         "--model_name",
         default = "gpt-3.5-turbo",
         help = "Name of the AI to jailbreak.",
-        choices=["gpt-3.5-turbo", 
-                 "gpt-4", 
-                 "gpt-4-turbo", 
-                 "gpt-4-1106-preview",
-                 ]
+        # choices=["gpt-3.5-turbo", 
+        #          "gpt-4", 
+        #          "gpt-4-turbo", 
+        #          "gpt-4-1106-preview",
+        #          ]
     )
 
-    ########### Output parameters ##########
-
-    parser.add_argument( 
-        "--output_folder",
-        type = str,
-        help = "Folder to store the results."
-    )
-    
     ##################################################
 
     args = parser.parse_args()

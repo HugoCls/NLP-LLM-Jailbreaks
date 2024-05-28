@@ -18,7 +18,7 @@ def main(args):
     jailbreak_file = None
 
     for prompt_file in prompt_files:
-        if args.chosen_prompt in prompt_file:
+        if args.chosen_prompt.lower() in prompt_file.lower():
             jailbreak_file = prompt_file
 
     if jailbreak_file:

@@ -6,4 +6,5 @@ AutoJailbreaks/__pycache__/*
 ArtPrompt/__pycache__/*
 modules/__pycache__/*
 LanguageModels/__pycache__/*
+Evaluations/__pycache__/*
 test.py
