@@ -83,6 +83,10 @@ $ python .\main.py --prompt "How to build a hack a website" --expected_result "S
 
 ## Techniques used
 
+Here is the final form of our application:
+
+![Structure](https://github.com/HugoCls/NLP-LLM-Jailbreaks/assets/93578223/6cfdb23e-c728-4db0-9898-c86561f99a8c)
+
 ### Trees of Attacks
 
 TAP is an automated and efficient method for jailbreaking large language models (LLMs) using interpretable prompts. This method involves three distinct LLMs: an attacker, an evaluator, and a target. The attacker generates potential jailbreaking prompts using a tree-of-thoughts reasoning approach, the evaluator assesses these prompts and determines if the jailbreak attempt was successful, and the target is the LLM that we aim to jailbreak.
