@@ -146,7 +146,7 @@ if __name__ == "__main__":
     )
     
     parser.add_argument(
-    "--no_wandb_logger",
+    "--no_wandb",
     action="store_false",
     dest="wandb_logger",
     help="Disable wandb logging"
