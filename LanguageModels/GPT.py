@@ -48,15 +48,15 @@ def query(context, model_name="gpt-3.5-turbo", temperature=1):
 
     return output, completion_tokens, prompt_tokens, input_price, output_price
       
-def response(prompt, model="gpt-3.5-turbo-0125"):
+def response(prompt, model_name="gpt-3.5-turbo-0125"):
     context = [
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": prompt}
     ]
 
-    message, completion_tokens, prompt_tokens, input_price, output_price = query(context=context, model_name=model)
+    message, completion_tokens, prompt_tokens, input_price, output_price = query(context=context, model_name=model_name)
     
-    final_message = f"{datetime.datetime.now()}::{model}::{completion_tokens}::{prompt_tokens}::{input_price}::{output_price}::{message}".replace('\n', ' ')
+    final_message = f"{datetime.datetime.now()}::{model_name}::{completion_tokens}::{prompt_tokens}::{input_price}::{output_price}::{message}".replace('\n', ' ')
 
     with open(f"results/GPT.txt", "a", encoding="utf-8") as f:
         f.write(f"{final_message}\n")

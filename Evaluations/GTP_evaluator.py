@@ -119,15 +119,15 @@ class GPTEvaluator(EvaluatorBase):
                     self.create_conv(self.get_evaluator_prompt(prompt, response)) 
                     for prompt, response in zip(attack_prompt_list, target_response_list)
                 ]
-        print(f"convs_list: {convs_list}")
-        print(f'\tQuerying evaluator with {len(attack_prompt_list)} prompts (to evaluate judge scores)', flush=True)
+        #print(f"convs_list: {convs_list}")
+        #print(f'\tQuerying evaluator with {len(attack_prompt_list)} prompts (to evaluate judge scores)', flush=True)
 
         raw_outputs = self.evaluator_model.batched_generate(convs_list, 
                                                         max_tokens = self.max_n_tokens,
                                                         temperature = self.temperature)
-        print(f"raw_outputs {raw_outputs}")
+        #print(f"raw_outputs {raw_outputs}")
         outputs = [self.process_output_judge_score(raw_output) for raw_output in raw_outputs]
-        print(f"outputs: {outputs}")
+        #print(f"outputs: {outputs}")
         return outputs
 
 

@@ -4,53 +4,58 @@ import pandas as pd
 import time
 import wandb
 import argparse
+import json
 
-themes = {}
+with open('data/advbench_by_theme.json', 'r') as file:
+    prompts_by_themes = json.load(file)
       
 if __name__ == "__main__":
+        
+    columns = ['prompt', 'response', 'evaluator_response', 'attack_mode', 'chosen_prompt', 'ascii_word', 'model_name', 'evaluator','theme']
     
-    columns = ['prompt', 'response', 'evaluator_response', 'attack_mode', 'chosen_prompt', 'ascii_word', 'model_name', 'evaluator']
-    
-    df = pd.DataFrame(columns=columns)
+    model_name = "gemini-1.5-flash"
+    j=0
+    for chosen_prompt in ["ClassicVSJailbreak"]:
+        
+        df = pd.DataFrame(columns=columns)
 
-    model_name = "chatgpt-3.5-turbo"
+        for theme in prompts_by_themes:
+            for harmfull_prompt, ascii_word, goal in prompts_by_themes[theme]:
+                for i in range(3):
+                    j+=1
+                    print(j)
+                    args = {
+                        "model_name":model_name,
+                        "prompt":harmfull_prompt,
+                        "chosen_prompt":chosen_prompt,
+                    }
 
-    chosen_prompt = "Hackerman"
+                    args = argparse.Namespace(**args)
 
-    for theme in themes:
-        for harmfull_prompt, ascii_word in themes[theme]:
-            for i in range(5):
+                    response = main_AutoJailbreaks.main(args)[1]
 
-                args = {
-                    "model_name":model_name,
-                    "prompt":harmfull_prompt,
-                    "chosen_prompt":chosen_prompt,
-                }
+                    score = GTP_evaluator.get_score(question=harmfull_prompt, response=response)
+                    
+                    data = {
+                        'prompt': harmfull_prompt,
+                        'response': response,
+                        'Jailbreak_Powerness': score,
+                        'attack_mode': 'AutoJailbreaks',
+                        'Technique': chosen_prompt,
+                        'ascii_word': None,
+                        'model_name': model_name,
+                        'evaluator': "chatgpt-3.5-turbo",
+                        'Theme': theme,
+                    }
 
-                args = argparse.Namespace(**args)
+                    new_row_df = pd.DataFrame([data])
 
-                response = main_AutoJailbreaks.main(args)[1]
+                    #print(harmfull_prompt, response)
+                    df = pd.concat([df, new_row_df], ignore_index=True)
 
-                score = GTP_evaluator.get_score(question=harmfull_prompt, response=response)
-                
-                data = {
-                    'prompt': harmfull_prompt,
-                    'response': response,
-                    'evaluator_response': score,
-                    'attack_mode': 'AutoJailbreaks',
-                    'chosen_prompt': chosen_prompt,
-                    'ascii_word': None,
-                    'model_name': model_name,
-                    'evaluator': "chatgpt-3.5-turbo",
-                }
+        df.to_csv(f'stats - {chosen_prompt}.csv')
 
-                new_row_df = pd.DataFrame([data])
-
-                df = pd.concat([df, new_row_df], ignore_index=True)
-
-    df.to_csv('autojailbreaks_results.txt')
-
-    t = time.time()
-    wandb.init(project='NLP')
-    wandb.log({f"stats_autojailbreaks_{t}": wandb.Table(dataframe=df)})
-    wandb.finish()
+        t = time.time()
+        wandb.init(project='NLP')
+        wandb.log({f"stats_autojailbreaks_{t}": wandb.Table(dataframe=df)})
+        wandb.finish()
