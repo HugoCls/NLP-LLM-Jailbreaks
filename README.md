@@ -1,5 +1,11 @@
 # Large Language Models Jailbreaks & Improvements
 
+The main goal of the project was to process some research on the current techniques of Jailbreaking LLMs and find improvements on their current implementations.
+
+We realised a final application which you can launch by your own, to try some of these techniques. The techniques used are explained more in depth later on this paper.
+
+![Structure](https://github.com/HugoCls/NLP-LLM-Jailbreaks/assets/93578223/6cfdb23e-c728-4db0-9898-c86561f99a8c)
+
 ## Launch the Project
 ```
 Usage:
